@@ -10,9 +10,15 @@ Desarrollar un sistema de consulta en el cual cada asesor sera delimitado para v
 
 Tecnologías manejadas:
 Django
+![image](https://user-images.githubusercontent.com/98204095/179035293-9c4dcdac-3375-4e4e-818d-8fef5036adbd.png)
+
+
 Python
+
 HTML
+
 SQL
+
 GitHub
 
 ![image](https://user-images.githubusercontent.com/98204095/179034353-dbc69575-faca-4e19-bc5c-0cd63556801e.png)
