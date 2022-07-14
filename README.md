@@ -14,7 +14,7 @@ Django
 ![image](https://user-images.githubusercontent.com/98204095/179035293-9c4dcdac-3375-4e4e-818d-8fef5036adbd.png)
 #
 Python
-![image](https://user-images.githubusercontent.com/98204095/179035675-18ced873-dd64-4814-84cb-bc058c8cb3bd.png)
+![image](https://user-images.githubusercontent.com/98204095/179036773-62b2bc10-21d4-4cb3-a5ad-6c616b1e6e8b.png)
 #
 HTML
 ![image](https://user-images.githubusercontent.com/98204095/179035889-c6d0f371-8003-4cc2-a459-120e5d8a8836.png)
