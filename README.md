@@ -17,11 +17,29 @@ Python
 ![image](https://user-images.githubusercontent.com/98204095/179035675-18ced873-dd64-4814-84cb-bc058c8cb3bd.png)
 #
 HTML
-
+![image](https://user-images.githubusercontent.com/98204095/179035889-c6d0f371-8003-4cc2-a459-120e5d8a8836.png)
+#
 SQL
-
+![image](https://user-images.githubusercontent.com/98204095/179035970-2288fb2a-9f04-466d-8368-9edd2c233425.png)
+#
 GitHub
+![image](https://user-images.githubusercontent.com/98204095/179036132-6fc809d1-b7df-4296-bf0d-36625731f566.png)
+#
+HACKATON BBVA 2022
 
+INTEGRANTES EQUIPO 2
+#
+SHEILY SANCHEZ
+#
+DANIEL CARMONA
+#
+JESUS OCHOA
+#
+LUIS DELGADO
+#
+RAFAEL ZAMBRANO
+#
+#
 ![image](https://user-images.githubusercontent.com/98204095/179034353-dbc69575-faca-4e19-bc5c-0cd63556801e.png)
 
 
