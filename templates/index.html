@@ -61,6 +61,7 @@
                                   <th scope="col">nacionalidad </th>
                                   <th scope="col">rfc </th>
                                   <th scope="col">tipoID </th>
+                                  <th scope="col">númeroID</th>
                                   <th scope="col">cuenta </th>
                                   <th scope="col">email </th>
 
@@ -83,9 +84,10 @@
                                           <td>{{ cliente.nacionalidad }} </td>
                                           <td>{{ cliente.rfc }} </td>
                                           <td>{{ cliente.tipoID }} </td>
+                                          <td>{{ cliente.numeroID }} </td>
                                           <td>{{ cliente.cuenta }} </td>
                                           <td>{{ cliente.email }} </td>
-                                          <td>{{ cliente.TDD }} </td>
+ 
                                         </tr>
                                   {% endfor %}
                                 
@@ -105,9 +107,10 @@
                                           <td>{{ cliente.nacionalidad |slice:":3" |stringformat:"s****"}} </td>
                                           <td>{{ cliente.rfc |slice:":3" |stringformat:"s****"}} </td>
                                           <td>{{ cliente.tipoID |slice:":3" |stringformat:"s****"}} </td>
+                                          <td>{{ cliente.numeroID |slice:":3" |stringformat:"s****"}} </td>
                                           <td>{{ cliente.cuenta }} </td>
                                           <td>{{ cliente.email |slice:":3" |stringformat:"s****"}} </td>
-                                          <td>{{ cliente.TDD |slice:":3" |stringformat:"s****"}} </td>
+
                                         </tr>
                                   {% endfor %}
                                 
@@ -120,15 +123,15 @@
                                           <td>{{ cliente.idCliente }} </td>
                                           <td>{{ cliente.nombre }} </td>
                                           <td>{{ cliente.apellidoPaterno }} </td>
-                                          <td>{{ cliente.apellidoMaterno |slice:":3" |stringformat:"s****"}}</td>
-                                          <td>{{ cliente.fechaNacimiento |slice:":3" |stringformat:"s****"}} </td>
+                                          <td>***</td>
+                                          <td>***</td>
                                           <td>{{ cliente.sexo }} </td>
                                           <td>{{ cliente.segmento }}</td>
-                                          <td>{{ cliente.nacionalidad |slice:":3" |stringformat:"s****"}} </td>
-                                          <td>{{ cliente.rfc |slice:":3" |stringformat:"s****"}} </td>
-                                          <td>{{ cliente.tipoID |slice:":3" |stringformat:"s****"}} </td>
+                                          <td>**** </td>
+                                          <td>*** </td>
+                                          <td>*** </td>
                                           <td>{{ cliente.cuenta }} </td>
-                                          <td>{{ cliente.email |slice:":3" |stringformat:"s****"}} </td>
+                                          <td>***</td>
 
                                         </tr>
                                   {% endfor %}
