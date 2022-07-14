@@ -5,8 +5,6 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
-    usuario = models.CharField(max_length=50 )
-    auth = models.CharField(max_length=50)
     nombreCompleto = models.CharField(max_length=150)
     area = models.CharField(max_length=50)
     ubicacion = models.CharField(max_length=50)
