@@ -46,20 +46,40 @@ def data_view(request):
 
     if request.method == 'POST' and form.is_valid():
         df = pd.read_csv(form.cleaned_data.get('file'), sep=',')
-        df.iloc[:,0].apply(lambda x: Cliente.objects.create(
-            idCliente = x.split(',')[0], 
-            nombre = x.split(',')[1], 
-            apellidoPaterno = x.split(',')[2], 
-            apellidoMaterno = x.split(',')[3], 
-            fechaNacimiento = x.split(',')[4], 
-            sexo = x.split(',')[5], 
-            segmento = x.split(',')[6], 
-            nacionalidad = x.split(',')[7], 
-            rfc = x.split(',')[8], 
-            tipoID = x.split(',')[9], 
-            cuenta = x.split(',')[10], 
-            # email = x.split(',')[11],             
-        ))
+
+        for i in range(df.shape[0]):
+            Cliente.objects.create(
+            idCliente = df.iloc[i]['idCliente'], 
+            nombre = df.iloc[i]['nombre'], 
+            apellidoPaterno = df.iloc[i]['apellidoPaterno'], 
+            apellidoMaterno = df.iloc[i]['apellidoMaterno'], 
+            fechaNacimiento = df.iloc[i]['fechaNacimiento'], 
+            sexo = df.iloc[i]['sexo'], 
+            segmento = df.iloc[i]['segmento'], 
+            nacionalidad = df.iloc[i]['nacionalidad'], 
+            rfc = df.iloc[i]['rfc'],             
+            tipoID = df.iloc[i]['tipoID'],
+            numeroID = df.iloc[i]['numeroID'],
+            cuenta = df.iloc[i]['cuenta'], 
+            email = df.iloc[i]['email'], 
+            )
+
+        # df.iloc[:,0].apply(lambda x: Cliente.objects.create(
+        #     idCliente = x.split(',')[0], 
+        #     nombre = x.split(',')[1], 
+        #     apellidoPaterno = x.split(',')[2], 
+        #     apellidoMaterno = x.split(',')[3], 
+        #     fechaNacimiento = x.split(',')[4], 
+        #     sexo = x.split(',')[5], 
+        #     segmento = x.split(',')[6], 
+        #     nacionalidad = x.split(',')[7], 
+        #     rfc = x.split(',')[8], 
+        #     tipoID = x.split(',')[9], 
+        #     cuenta = x.split(',')[10], 
+        #     # email = x.split(',')[11],             
+        # ))
+        print(df)
+
         messages.success(request, 'Clientes agregados')
         return redirect('index')
 
@@ -96,3 +116,4 @@ def logout_view(request):
     logout(request)
     messages.success(request, 'Sesión cerrada')
     return redirect('login')
+
