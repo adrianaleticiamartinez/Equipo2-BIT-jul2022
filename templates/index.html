@@ -1,0 +1,149 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block title %}Admin{% endblock title %}
+
+{% block content %}
+
+        
+    <main id='main'>
+        <div class="section">
+
+              {% if messages  %}
+                  {% for message in messages %}
+                      {% if message.tags == 'success' %}
+                          <div class="alert alert-success alert-dismissible fade show" role="alert">
+                              <strong>{{ message }}</strong> You should check in on some of those fields below.
+                              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                          </div> 
+                      {% else %}
+                          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                              <strong>{{ message }}</strong> You should check in on some of those fields below.
+                              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                          </div>                    
+                      {% endif %}                
+                  {% endfor %}
+              {% endif %} 
+                <div class="row">            
+                    <div class="col-12">
+                        <div class="card recent-sales overflow-auto">
+          
+                          <div class="filter">
+                            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                              <li class="dropdown-header text-start">
+                                <h6>Filter</h6>
+                              </li>
+          
+                              <li><a class="dropdown-item" href="#">Today</a></li>
+                              <li><a class="dropdown-item" href="#">This Month</a></li>
+                              <li><a class="dropdown-item" href="#">This Year</a></li>
+                            </ul>
+                          </div>
+          
+                          <div class="card-body">
+                            <h5 class="card-title">Customers</h5>
+          
+                            <table class="table table-borderless datatable">
+                              <thead>
+                                <tr>
+                                  <th scope="col">#</th>
+                                  <th scope="col">idCliente </th>
+                                  <th scope="col">nombre </th>
+                                  <th scope="col">apellidoPaterno </th>
+                                  <th scope="col">apellidoMaterno </th>
+                                  <th scope="col">fechaNacimiento </th>
+                                  <th scope="col">sexo </th>
+                                  <th scope="col">segmento</th>
+                                  <th scope="col">nacionalidad </th>
+                                  <th scope="col">rfc </th>
+                                  <th scope="col">tipoID </th>
+                                  <th scope="col">cuenta </th>
+                                  <th scope="col">email </th>
+
+                                </tr>
+                              </thead>
+                              <tbody>       
+                                
+                                {% if user_group == "Manager" %}                                 
+
+                                  {% for cliente in clientes %}  
+                                      <tr>
+                                          <th scope="row">{{ forloop.counter }}</th>
+                                          <td>{{ cliente.idCliente }} </td>
+                                          <td>{{ cliente.nombre }} </td>
+                                          <td>{{ cliente.apellidoPaterno }} </td>
+                                          <td>{{ cliente.apellidoMaterno }} </td>
+                                          <td>{{ cliente.fechaNacimiento }} </td>
+                                          <td>{{ cliente.sexo }} </td>
+                                          <td>{{ cliente.segmento }}</td>
+                                          <td>{{ cliente.nacionalidad }} </td>
+                                          <td>{{ cliente.rfc }} </td>
+                                          <td>{{ cliente.tipoID }} </td>
+                                          <td>{{ cliente.cuenta }} </td>
+                                          <td>{{ cliente.email }} </td>
+                                          <td>{{ cliente.TDD }} </td>
+                                        </tr>
+                                  {% endfor %}
+                                
+                                {% endif %}
+                                {% if user_group == "Validador" %}                                 
+
+                                  {% for cliente in clientes %}  
+                                      <tr>
+                                          <th scope="row">{{ forloop.counter }}</th>
+                                          <td>{{ cliente.idCliente }} </td>
+                                          <td>{{ cliente.nombre }} </td>
+                                          <td>{{ cliente.apellidoPaterno }} </td>
+                                          <td>{{ cliente.apellidoMaterno |slice:":3" |stringformat:"s****"  }}</td>
+                                          <td>{{ cliente.fechaNacimiento |slice:":3" |stringformat:"s****"}} </td>
+                                          <td>{{ cliente.sexo }} </td>
+                                          <td>{{ cliente.segmento }}</td>
+                                          <td>{{ cliente.nacionalidad |slice:":3" |stringformat:"s****"}} </td>
+                                          <td>{{ cliente.rfc |slice:":3" |stringformat:"s****"}} </td>
+                                          <td>{{ cliente.tipoID |slice:":3" |stringformat:"s****"}} </td>
+                                          <td>{{ cliente.cuenta }} </td>
+                                          <td>{{ cliente.email |slice:":3" |stringformat:"s****"}} </td>
+                                          <td>{{ cliente.TDD |slice:":3" |stringformat:"s****"}} </td>
+                                        </tr>
+                                  {% endfor %}
+                                
+                                {% endif %}
+                                {% if user_group == "Restringido" %}                                 
+
+                                  {% for cliente in clientes %}  
+                                      <tr>
+                                          <th scope="row">{{ forloop.counter }}</th>
+                                          <td>{{ cliente.idCliente }} </td>
+                                          <td>{{ cliente.nombre }} </td>
+                                          <td>{{ cliente.apellidoPaterno }} </td>
+                                          <td>{{ cliente.apellidoMaterno |slice:":3" |stringformat:"s****"}}</td>
+                                          <td>{{ cliente.fechaNacimiento |slice:":3" |stringformat:"s****"}} </td>
+                                          <td>{{ cliente.sexo }} </td>
+                                          <td>{{ cliente.segmento }}</td>
+                                          <td>{{ cliente.nacionalidad |slice:":3" |stringformat:"s****"}} </td>
+                                          <td>{{ cliente.rfc |slice:":3" |stringformat:"s****"}} </td>
+                                          <td>{{ cliente.tipoID |slice:":3" |stringformat:"s****"}} </td>
+                                          <td>{{ cliente.cuenta }} </td>
+                                          <td>{{ cliente.email |slice:":3" |stringformat:"s****"}} </td>
+
+                                        </tr>
+                                  {% endfor %}
+                                
+                                {% endif %}
+
+                              </tbody>
+                            </table>          
+                          </div>          
+                        </div>
+                      </div>
+                </div>
+        </div>
+    </main>
+
+
+
+{% endblock content %}
